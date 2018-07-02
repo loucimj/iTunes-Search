@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="gibson-regular.otf">
+            <string>Gibson-Regular</string>
+        </array>
+        <array key="gibson-semibold.otf">
+            <string>Gibson-SemiBold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="MovieCollectionViewCell" customModule="iTunes_Search" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="360" height="649"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="360" height="649"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X9b-vo-ctI">
+                        <rect key="frame" x="24" y="36" width="312" height="589"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fOF-l4-X4y">
+                        <rect key="frame" x="24" y="36" width="312" height="589"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kFw-h8-yvt">
+                                <rect key="frame" x="0.0" y="0.0" width="312" height="352"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="352" id="w1W-2H-U0L"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="LOST" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="glU-Km-FM4">
+                                <rect key="frame" x="24" y="376" width="87" height="38"/>
+                                <fontDescription key="fontDescription" name="Gibson-SemiBold" family="Gibson" pointSize="38"/>
+                                <color key="textColor" red="0.27058823529411763" green="0.30980392156862746" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Season 3, episode 1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ar5-rq-me6">
+                                <rect key="frame" x="24" y="416" width="136" height="16"/>
+                                <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="16"/>
+                                <color key="textColor" red="0.27058823529999998" green="0.30980392159999998" blue="0.38823529410000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZlJ-JD-mKk">
+                                <rect key="frame" x="24" y="450" width="264" height="84.5"/>
+                                <string key="text">Forty-eight survivors of an airline flight originating from Australia, bound for the U.S., which crash-lands onto an unknown island 1000 miles off course, struggle to figure out a way to survive while trying to find a way to be rescued.</string>
+                                <fontDescription key="fontDescription" name="Gibson-Regular" family="Gibson" pointSize="14"/>
+                                <color key="textColor" red="0.27058823529411763" green="0.30980392156862746" blue="0.38823529411764707" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="kFw-h8-yvt" firstAttribute="top" secondItem="fOF-l4-X4y" secondAttribute="top" id="0dg-49-7W4"/>
+                            <constraint firstItem="glU-Km-FM4" firstAttribute="leading" secondItem="fOF-l4-X4y" secondAttribute="leading" constant="24" id="Ays-ht-WUg"/>
+                            <constraint firstItem="ar5-rq-me6" firstAttribute="top" secondItem="glU-Km-FM4" secondAttribute="bottom" constant="2" id="Bkv-YE-PVR"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ar5-rq-me6" secondAttribute="trailing" constant="24" id="Kx7-qj-ctP"/>
+                            <constraint firstItem="kFw-h8-yvt" firstAttribute="leading" secondItem="fOF-l4-X4y" secondAttribute="leading" id="MvA-V6-Bn9"/>
+                            <constraint firstItem="ar5-rq-me6" firstAttribute="leading" secondItem="glU-Km-FM4" secondAttribute="leading" id="Nzw-Vz-mNj"/>
+                            <constraint firstItem="glU-Km-FM4" firstAttribute="top" secondItem="kFw-h8-yvt" secondAttribute="bottom" constant="24" id="Piz-VR-kPF"/>
+                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="ZlJ-JD-mKk" secondAttribute="bottom" constant="24" id="Pr8-as-9Ow"/>
+                            <constraint firstItem="ZlJ-JD-mKk" firstAttribute="top" secondItem="ar5-rq-me6" secondAttribute="bottom" constant="18" id="cNL-ku-RoL"/>
+                            <constraint firstItem="ZlJ-JD-mKk" firstAttribute="leading" secondItem="ar5-rq-me6" secondAttribute="leading" id="eFw-HQ-I6w"/>
+                            <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="glU-Km-FM4" secondAttribute="trailing" constant="24" id="o6Q-HC-4rq"/>
+                            <constraint firstAttribute="trailing" secondItem="kFw-h8-yvt" secondAttribute="trailing" id="pmH-Eq-ans"/>
+                            <constraint firstAttribute="trailing" secondItem="ZlJ-JD-mKk" secondAttribute="trailing" constant="24" id="wFe-bS-F5Q"/>
+                        </constraints>
+                    </view>
+                </subviews>
+            </view>
+            <constraints>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="top" secondItem="fOF-l4-X4y" secondAttribute="top" constant="-16" id="68I-AV-fx2"/>
+                <constraint firstItem="X9b-vo-ctI" firstAttribute="width" secondItem="fOF-l4-X4y" secondAttribute="width" id="6fw-Vq-2Jp"/>
+                <constraint firstItem="X9b-vo-ctI" firstAttribute="height" secondItem="fOF-l4-X4y" secondAttribute="height" id="DaB-GV-nUB"/>
+                <constraint firstItem="X9b-vo-ctI" firstAttribute="centerX" secondItem="fOF-l4-X4y" secondAttribute="centerX" id="KUE-l6-OGk"/>
+                <constraint firstItem="X9b-vo-ctI" firstAttribute="centerY" secondItem="fOF-l4-X4y" secondAttribute="centerY" id="Pdu-ds-69c"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="bottom" secondItem="fOF-l4-X4y" secondAttribute="bottom" constant="24" id="gm8-tL-SXf"/>
+                <constraint firstItem="ZTg-uK-7eu" firstAttribute="trailing" secondItem="fOF-l4-X4y" secondAttribute="trailing" constant="24" id="l6a-rL-9rg"/>
+                <constraint firstItem="fOF-l4-X4y" firstAttribute="leading" secondItem="ZTg-uK-7eu" secondAttribute="leading" constant="24" id="sg9-3R-Nhk"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <size key="customSize" width="360" height="649"/>
+            <connections>
+                <outlet property="authorLabel" destination="ar5-rq-me6" id="EdC-fe-x6t"/>
+                <outlet property="backgroundImageView" destination="kFw-h8-yvt" id="Qps-ym-6Z4"/>
+                <outlet property="containerView" destination="fOF-l4-X4y" id="elU-98-ONG"/>
+                <outlet property="descriptionLabel" destination="ZlJ-JD-mKk" id="9rk-4R-Mr9"/>
+                <outlet property="shadowView" destination="X9b-vo-ctI" id="4aG-mg-KgE"/>
+                <outlet property="titleLabel" destination="glU-Km-FM4" id="cyp-Xe-Nw8"/>
+            </connections>
+            <point key="canvasLocation" x="189" y="353.5"/>
+        </collectionViewCell>
+    </objects>
+</document>
