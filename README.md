@@ -1,2 +1,2 @@
 # iTunes-Search
-An example project to search the Apple Store for Music, TV Shows and Movies.
+An example project to search the Apple Store for Music, TV Shows and Movies, using IGListKit.
