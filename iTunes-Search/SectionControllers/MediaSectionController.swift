@@ -15,7 +15,6 @@ final class MediaSectionController: ListSectionController {
     var media:Media?
     var type:MediaTypeSelection = .music
     var delegate:MediaCollectionViewCellDelegate?
-    
     convenience init(type:MediaTypeSelection, delegate:MediaCollectionViewCellDelegate?) {
         self.init()
         self.type = type
@@ -23,11 +22,12 @@ final class MediaSectionController: ListSectionController {
     }
     
     override func sizeForItem(at index: Int) -> CGSize {
-        let width = collectionContext!.containerSize.width
+        let representationLayout = media?.representationLayout ?? .normal
+        let width = representationLayout == .normal ? collectionContext!.containerSize.width :  collectionContext!.containerSize.width / 2
         var height:CGFloat = 0
         switch self.type {
         case .music:
-            height = MusicCollectionViewCell.calculateHeight()
+            height = representationLayout == .tiny ? TinyMusicCollectionViewCell.calculateHeight() : MusicCollectionViewCell.calculateHeight()
         case .movies:
             height = MovieCollectionViewCell.calculateHeight()
         case .tvShows:
@@ -37,10 +37,11 @@ final class MediaSectionController: ListSectionController {
     }
     
     override func cellForItem(at index: Int) -> UICollectionViewCell {
+        let shouldShowTiny = (self.media?.representationLayout ?? .normal) == .tiny
         var cellName = ""
         switch self.type {
         case .music:
-            cellName = "MusicCollectionViewCell"
+            cellName = shouldShowTiny ? "TinyMusicCollectionViewCell" : "MusicCollectionViewCell"
         case .movies:
             cellName = "MovieCollectionViewCell"
         case .tvShows:
@@ -63,4 +64,3 @@ final class MediaSectionController: ListSectionController {
     }
     
 }
-

@@ -16,6 +16,7 @@ enum MediaTypeSelection: String {
 }
 class ViewController: UIViewController,Alertable {
     
+    @IBOutlet weak var toggleVisualizationView: UIView!
     @IBOutlet weak var searchField: UITextField!
     @IBOutlet weak var closeIconImageView: UIImageView!
     @IBOutlet weak var musicButtonView: UIView!
@@ -31,12 +32,12 @@ class ViewController: UIViewController,Alertable {
     var currentTypeSelection:MediaTypeSelection = .music
     var currentSearchTerm:String = ""
     let disabledAlpha:CGFloat = 0.2
-    
+    let layout: ListCollectionViewLayout = ListCollectionViewLayout(stickyHeaders: false, topContentInset: 8, stretchToEdge: true)
     var mediaCollection:Array<Media> = Array<Media>()
     lazy var adapter: ListAdapter = {
         return ListAdapter(updater: ListAdapterUpdater(), viewController: self)
     }()
-
+    var shouldShowTiny: Bool = false
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -56,10 +57,10 @@ class ViewController: UIViewController,Alertable {
 
     //MARK: - Functions
     func setupViews() {
+        collectionView.collectionViewLayout = layout
         adapter.collectionView = collectionView
         adapter.dataSource = self
         adapter.scrollViewDelegate = self
-
         searchField.delegate = self
         searchField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
 
@@ -73,6 +74,7 @@ class ViewController: UIViewController,Alertable {
         moviesButtonView.respondToSelectorOnTap(target: self, selector: #selector(userWantsToSelectMovies))
         tvShowsButtonView.respondToSelectorOnTap(target: self, selector: #selector(userWantsToSelectTvShows))
         buttonSize = selectionBarImageView.bounds.size.width
+        toggleVisualizationView.respondToSelectorOnTap(target: self, selector: #selector(userWantsToChangeVisualization))
         
     }
     @objc fileprivate func search(text:String) {
@@ -171,6 +173,10 @@ class ViewController: UIViewController,Alertable {
         selectTVShowAnimation()
         restartSearchIfNeeded()
     }
+    @objc func userWantsToChangeVisualization() {
+        shouldShowTiny = !shouldShowTiny
+        adapter.reloadData(completion: nil)
+    }
 }
 //MARK: - MediaHandler
 extension ViewController: MediaHandler {
@@ -243,8 +249,19 @@ extension ViewController: ListAdapterDataSource {
             spacer.size = CGSize(width: 0, height: 24)
             objects.append(spacer)
         }
-        
-        for item in mediaCollection {
+        var currentTinyCount = 0
+        for (index,var item) in mediaCollection.enumerated() {
+            if currentTypeSelection == .music && shouldShowTiny {
+                if currentTinyCount == 0 {
+                    item.representationLayout = .halfWidth
+                } else {
+                    item.representationLayout = .tiny
+                }
+                currentTinyCount += 1
+                if currentTinyCount == 3 {
+                    currentTinyCount = 0
+                }
+            }
             objects.append(item.diffable())
         }
         

@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -26,6 +26,14 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4uC-aH-hqm">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="162"/>
                                 <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="thE-0P-9fM">
+                                        <rect key="frame" x="16" y="24" width="40" height="40"/>
+                                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="SaT-mt-YWj"/>
+                                            <constraint firstAttribute="width" constant="40" id="w6q-1W-CPP"/>
+                                        </constraints>
+                                    </view>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ea3-hq-V0f">
                                         <rect key="frame" x="0.0" y="60" width="375" height="52"/>
                                         <subviews>
@@ -114,7 +122,9 @@
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="GBv-ea-l5X" secondAttribute="bottom" id="2LX-F3-19S"/>
                                     <constraint firstItem="Ea3-hq-V0f" firstAttribute="leading" secondItem="4uC-aH-hqm" secondAttribute="leading" id="78D-zY-MQn"/>
+                                    <constraint firstItem="thE-0P-9fM" firstAttribute="leading" secondItem="4uC-aH-hqm" secondAttribute="leading" constant="16" id="BU8-wf-BAp"/>
                                     <constraint firstAttribute="trailing" secondItem="GBv-ea-l5X" secondAttribute="trailing" id="DbC-J5-98j"/>
+                                    <constraint firstItem="thE-0P-9fM" firstAttribute="top" secondItem="4uC-aH-hqm" secondAttribute="top" constant="24" id="gs2-nF-dlK"/>
                                     <constraint firstAttribute="trailing" secondItem="Ea3-hq-V0f" secondAttribute="trailing" id="h1a-3O-sEN"/>
                                     <constraint firstItem="GBv-ea-l5X" firstAttribute="bottom" secondItem="Dhx-ZS-Ctv" secondAttribute="bottom" id="to4-3Q-m7c"/>
                                     <constraint firstItem="GBv-ea-l5X" firstAttribute="leading" secondItem="4uC-aH-hqm" secondAttribute="leading" id="vyx-Ns-fVa"/>
@@ -165,6 +175,7 @@
                         <outlet property="searchField" destination="Z4y-ck-Ley" id="GEf-Y0-i95"/>
                         <outlet property="selectionBarImageView" destination="Dhx-ZS-Ctv" id="qwD-bX-BM4"/>
                         <outlet property="selectionBarLeadingConstraint" destination="wPG-3l-cEz" id="FSW-YN-5mr"/>
+                        <outlet property="toggleVisualizationView" destination="thE-0P-9fM" id="tCC-ru-YBa"/>
                         <outlet property="tvShowsButtonView" destination="Rbj-o3-NVd" id="mXH-fy-ylB"/>
                     </connections>
                 </viewController>

@@ -9,7 +9,11 @@
 import Foundation
 import IGListKit
 import Unbox
-
+enum MediaRepresentation {
+    case tiny
+    case halfWidth
+    case normal
+}
 struct Media {
     var id:Int = 0
     var artistName:String = ""
@@ -18,6 +22,7 @@ struct Media {
     var previewURL:String = ""
     var longDescription:String = ""
     var artWorkURL:String = ""
+    var representationLayout: MediaRepresentation = .normal
     var largeArtworkURL: String {
         get {
             return artWorkURL.replacingOccurrences(of: "400x400", with: "1024x1024")
